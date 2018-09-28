@@ -4,6 +4,7 @@ use bdChamada;
 
 create table login(
 log_login_id int   auto_increment  not null,
+log_nome varchar(15) not null,
 log_email varchar(50) not null,
 log_senha varchar(15) not null,
 constraint pk_login primary key (log_login_id)
@@ -50,7 +51,7 @@ cha_fk_perfil_pro int(9) not null
 
 
 
-
+select * from login;
 
 ##adicionando FK  nas  tables
 
