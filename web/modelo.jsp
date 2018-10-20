@@ -9,7 +9,7 @@
             <div class="main_container">
                 <%@include file="sidebar.jsp"%>
                 <%@include file="topmenu.jsp"%>
-                <%@include file="content.jsp"%>
+                
                 <%@include file="footer.jsp"%>
                 <%@include file="script.jsp"%>
             </div>

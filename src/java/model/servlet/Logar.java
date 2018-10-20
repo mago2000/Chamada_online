@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.bean.LoginBean;
 import model.dao.Login;
+import model.dao.Pro_perfil;
 /**
  *
  * @author picone
@@ -34,6 +35,7 @@ public class Logar extends HttpServlet {
         try {
             Login log = new Login();
             LoginBean lgb = new LoginBean();
+            Pro_perfil pro = new Pro_perfil();
         if(request.getParameter("user").equals("")||request.getParameter("senha").equals("")){
                 response.sendRedirect("v_login.jsp");
                 
@@ -47,8 +49,11 @@ public class Logar extends HttpServlet {
                  if(log.logarLogin(user, senha)){
                 response.sendRedirect("usuario.jsp");
                 session.setAttribute("usuario", user);
+                session.setAttribute("senha", senha);
+                
                 session.setMaxInactiveInterval(60 * 5);
-                }
+                
+                 }
                 else{
                 response.sendRedirect("v_login.jsp");
                 }

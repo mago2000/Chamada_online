@@ -48,12 +48,12 @@
                 <h3>GERAL</h3>
                 <ul class="nav side-menu">
                   
-                  <li><a><i class="fa fa-edit"></i> CADASTRO <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> SERVIÇOS <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="configura_perfil.jsp">Perfil</a></li>
-                      <li><a href="cadastrar_turma.jsp">Turmas</a></li>
+                      <li><a href="configura_turma.jsp">Turmas</a></li>
                       <li><a href="fazer_chamada.jsp">Chamadas</a></li>
-                      <li><a href="usuario.jsp">Usuário</a></li>
+                      
                     </ul>
                   </li>
                   <li><a href="./Sair"><i class="fa fa-power-off"></i> SAIR </a>

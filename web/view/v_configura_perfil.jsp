@@ -50,7 +50,55 @@
                   </div>
                   <div class="x_content">
                       
-                
+                 <form action="./Cadastra_login" method="post">
+              <div>
+              <input type="hidden" name="funcao" id="funcao" value="alterar" />             
+              </div>
+              <h1>Configuração do perfil</h1>
+                            <div>
+                                <input type="text" name="user" id="user" class="form-control" placeholder="Usuário" required="" />
+                            </div>
+                            </br>
+                           
+                            <div>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" required="" />
+                            </div>
+                            </br>
+                           
+
+                            <div>
+                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required="" />
+                            </div>
+                            <div>
+                            </br>
+                           
+
+                            <div>
+                                <input type="text" name="nome_completo" id="nome_completo" class="form-control" placeholder="Nome completo" required="" />
+                            </div>
+                            </br>
+                           
+
+                            <div>
+                                <input type="text" name="formacao" id="formacao" class="form-control" placeholder="Formação" required="" />
+                            </div>
+                            
+                            <br>
+                                <input type="submit" value="alterar">   
+
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="separator">
+                                
+                                <div class="clearfix"></div>
+
+
+
+                            </div>
+                        </form>
+
                       
                   </div>
                 </div>

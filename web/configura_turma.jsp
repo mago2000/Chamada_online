@@ -1,16 +1,23 @@
+<%-- 
+    Document   : configura_perfil
+    Created on : 17/10/2018, 15:18:26
+    Author     : picone
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <%@include file="header.jsp"%>    
+        
+        
     </head>
-
     <body class="nav-md">
         <div class="container body">
             <div class="main_container">
                 <%@include file="sidebar.jsp"%>
                 <%@include file="topmenu.jsp"%>
-                <%@include file="view/v_usuario.jsp"%>
-                <%@include file="view/v_configura_perfil.jsp"%>
+                <%@include file="view/v_configura_turma.jsp"%>
                 
                 <%@include file="footer.jsp"%>
                 
@@ -18,4 +25,13 @@
                 <%@include file="script.jsp"%>
         </div>
     </body>
+
+    
+    
+                
+                
+                
+    
+                
+    
 </html>

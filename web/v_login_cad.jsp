@@ -5,47 +5,58 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body class="login">
+        <div>
+            <a class="hiddenanchor" id="signup"></a>
+            <a class="hiddenanchor" id="signin"></a>
+
+            <div class="login_wrapper">
+                <div class="animate form login_form">
+                    <section class="login_content">
+                        
          <form action="./Cadastra_login" method="post">
-              </div>
+              <div>
               <input type="hidden" name="funcao" id="funcao" value="cadastrar" />             
-              <h1>Login do SISTEMA</h1>
+              </div>
+              <h1>CADASTRO</h1>
                             <div>
                                 <input type="text" name="user" id="user" class="form-control" placeholder="Usuário" required="" />
                             </div>
                             </br>
-                            </br>
+                           
                             <div>
                                 <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" required="" />
                             </div>
                             </br>
-                            </br>
+                           
 
                             <div>
                                 <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required="" />
                             </div>
                             <div>
                             </br>
-                            </br>
+                           
 
                             <div>
                                 <input type="text" name="nome_completo" id="nome_completo" class="form-control" placeholder="Nome completo" required="" />
                             </div>
                             </br>
-                            </br>
+                           
 
                             <div>
                                 <input type="text" name="formacao" id="formacao" class="form-control" placeholder="Formação" required="" />
                             </div>
                             
-
+                            <br>
                                 <input type="submit" value="cadastrar"> 
+                               <a href="v_login.jsp" class="to_register"> Faça seu login </a>
                                 <!--
                                 <a class="btn btn-default submit" href="sistema.jsp">Log in</a>
                                 <a class="reset_pass" href="#">Esqueceu a senha?</a>

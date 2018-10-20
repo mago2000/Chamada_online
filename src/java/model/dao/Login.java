@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import model.factory.ConectorFactory;
 public class Login {
 
-private Connection con;
+Connection con;
 
 
     public Login() {
