@@ -15,7 +15,7 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
                 
-                <a href="#" class="site_title"> <span>Chamada online</span></a>
+                <a href="usuario.jsp" class="site_title"> <span>Chamada online</span></a>
         
             
             
@@ -26,7 +26,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                  <a href="usuario.jsp"><img src="images/img.jpg" alt="..." class="img-circle profile_img"></a>
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>

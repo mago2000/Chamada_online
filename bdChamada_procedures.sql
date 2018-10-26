@@ -248,4 +248,4 @@ select * from turma where tur_fk_perfil_pro = p_tur_fk_perfil_proo;
 
 
 end$$
-##call listar_turma('luis',12345);
+call listar_turma('luis',12345);

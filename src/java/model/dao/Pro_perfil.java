@@ -1,14 +1,20 @@
 package model.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.ResultSet;
+
 import model.factory.ConectorFactory;
 import model.bean.LoginBean;
 import model.bean.Pro_perfilBean;
 
 public class Pro_perfil extends Login {
-
-    public Pro_perfil() {
+private PreparedStatement ps;
+private Statement st;
+private Connection con ;
+private   ResultSet rs;
+public Pro_perfil() {
            this.con = new ConectorFactory().getConnection();
     }
     
@@ -17,20 +23,27 @@ public class Pro_perfil extends Login {
     
     }
     
-    public void apresentarPerfil(LoginBean login, Pro_perfilBean perfil){
-    String sql="call busca_perfil_pro(?,?);";
+    public ResultSet apresentarPerfil(String nome,String senha){
+    
+        String sql="call busca_perfil_pro('"+nome+"',"+senha+")";
         try {
-            
-            
-           PreparedStatement ps =  con.prepareStatement(sql);
-           ps.setString(1,perfil.getPro_nome());
-           ps.setString(2,perfil.getPro_formacao());
-           ps.setString(3,login.getEmail());
+             ps = con.prepareStatement(sql);
            
-           ResultSet rs = ps.executeQuery();
-             
+  
+           rs = ps.executeQuery();
+           while (rs.next()) {
+            LoginBean login = new LoginBean();
+            Pro_perfilBean perfil = new Pro_perfilBean();
+           
+          perfil.setPro_nome(rs.getString("per_nome"));
+          perfil.setPro_formacao(rs.getString("per_formacao"));
+          login.setEmail(rs.getString("log_email"));
+    
+            }
+          
             ps.close();
-            //con.close();
+            con.close();  
+           
         } catch (Exception e) {
          throw new RuntimeException("Erro 1_D   " + e);
     
@@ -38,7 +51,7 @@ public class Pro_perfil extends Login {
         }
         
 
-    
+    return rs ;
     
     }
 

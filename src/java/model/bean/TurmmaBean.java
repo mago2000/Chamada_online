@@ -12,34 +12,14 @@ String tur_dia_semana;
 Date tur_ini_dia;
 Date tur_fim_dia;
 int tur_qtd_falta_dia;
-
-    public int getTur_qtd_falta_dia() {
-        return tur_qtd_falta_dia;
-    }
-
-    public void setTur_qtd_falta_dia(int tur_qtd_falta_dia) {
-        this.tur_qtd_falta_dia = tur_qtd_falta_dia;
-    }
-
-
-    public Time getTur_hora_inicio() {
-        return tur_hora_inicio;
-    }
-
-    public void setTur_hora_inicio(Time tur_hora_inicio) {
-        this.tur_hora_inicio = tur_hora_inicio;
-    }
-
-    public Time getTur_hora_fim() {
-        return tur_hora_fim;
-    }
-
-    public void setTur_hora_fim(Time tur_hora_fim) {
-        this.tur_hora_fim = tur_hora_fim;
-    }
+    
 Time tur_hora_inicio;
 Time tur_hora_fim;
 int tur_qtd_dia;
+
+   
+  
+
 //Datetime tur_ini_hr;
 
     public int getTurma_id() {
@@ -97,6 +77,29 @@ int tur_qtd_dia;
     public void setTur_qtd_dia(int tur_qtd_dia) {
         this.tur_qtd_dia = tur_qtd_dia;
     }
+  public int getTur_qtd_falta_dia() {
+        return tur_qtd_falta_dia;
+    }
 
+    public void setTur_qtd_falta_dia(int tur_qtd_falta_dia) {
+        this.tur_qtd_falta_dia = tur_qtd_falta_dia;
+    }
+
+
+    public Time getTur_hora_inicio() {
+        return tur_hora_inicio;
+    }
+
+    public void setTur_hora_inicio(Time tur_hora_inicio) {
+        this.tur_hora_inicio = tur_hora_inicio;
+    }
+
+    public Time getTur_hora_fim() {
+        return tur_hora_fim;
+    }
+
+    public void setTur_hora_fim(Time tur_hora_fim) {
+        this.tur_hora_fim = tur_hora_fim;
+    }
     
 }

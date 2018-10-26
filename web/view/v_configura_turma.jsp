@@ -1,8 +1,9 @@
 <%@page import="model.bean.TurmmaBean"%>
-
 <%@page import="model.dao.Turma"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import= "java.util.ArrayList"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -36,15 +37,7 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
+                     
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
@@ -55,6 +48,19 @@
                  <form action="./Turma_conf" method="post">
               <div>
               <input type="hidden" name="funcao" id="funcao" value="cadastrar" />             
+               <%
+                  String usuario = (String) session.getAttribute("usuario");
+                  String senha = (String) session.getAttribute("senha");
+              if(usuario == null){
+              out.print(" variavel vazia");
+              
+              
+              }
+              %>
+              
+              <input type="hidden" name="usuario" id="usuario" value="<%=usuario%>" />
+              <input type="hidden" name="senha" id="senha" value="<%=senha%>" />
+             
               </div>
               <h1>Cadastrar Nova Turma</h1>
                             <div>
@@ -79,22 +85,31 @@
                                 
                             </div>
                             <br>
-                            
+                            <div>
+                                <input type="text" name="data_fim" id="data_inicio" class="form-control" placeholder="Data de fim da turma" required="" />
+                                
+                            </div>
+                            <br>
+                            <div>
+                                <input type="text" name="data_fim" id="data_inicio" class="form-control" placeholder="Data de fim da turma" required="" />
+                                
+                            </div>
+                            <br>
                          
                             <div>
-                                <input type="text" name="hora_inicio" id="hora_inicio" class="form-control" placeholder="Hora de inicio da aula" required="" />
+                                <input type="text" name="dia_semana" id="dia_semana" class="form-control" placeholder="Dia da semana da aula" required="" />
                             </div>
                             </br>
                            
 
                             <div>
-                                <input type="text" name="hora_fim" id="hora_fim" class="form-control" placeholder="Hora de final da aula" required="" />
+                                <input type="text" name="qtd_falta" id="qtd_falta" class="form-control" placeholder="Quantidade de  faltas" required="" />
                             </div>
                          
                             <br>
                                 <input type="submit" value="cadastrar">   
                                 <input type="submit" value="alterar">   
-
+                 </form>
                             </div>
 
                             <div class="clearfix"></div>
@@ -124,31 +139,80 @@
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                 <form action="./Turma_conf" method="post">
-              <input type="hidden" name="funcao" id="funcao" value="listar_todos" />             
-                                
-              <button type="submit" >   
-                                </button>
-                        </form>
-
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
+                      
+                 
+                        
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                 
+                   
+                    <div>
+                  <form action="./Turma_conf" method="post">
+              <input type="hidden" name="funcao" id="funcao" value="listar_todos" /> 
+              <%
+                  usuario = (String) session.getAttribute("usuario");
+                  senha = (String) session.getAttribute("senha");
               
-                            </div>
+             if(usuario == null){
+              out.print(" variavel vazia");
+              
+              
+              }
+              %>
+              
+              <input type="hidden" name="usuario" id="usuario" value="<%=usuario%>" />
+              <input type="hidden" name="senha" id="senha" value="<%=senha%>" />
+             
+                 <div>
+                  
+                  
+              </div>
+
+             <input type="submit" value="listar_todos"> 
+                 </form>
+ 
+       <table border ='1'>
+        <tr> 
+        <th>Nome Turma</th>
+        <th>Diciplina Turma</th>
+        <th>Dia inicio</th>
+        <th>Dia Termino</th>
+        <th>Hora inicio</th>
+        <th>Hora termino</th>
+        <th>Dia da semana</th>
+        <th>Qtd faltas</th>
+        <th>Função</th>
+        <th>Função</th>
+        
+        </tr>                                        
+                   
+                            <c:forEach items="${lista}" var="lista" >
+                            
+                         <tr>
+                             <td> <c:out value="${lista.tur_nome}"/> </td>
+                            <td> <c:out value= "${lista.tur_diciplina}"/> </td>
+                            <td> <c:out value= "${lista.tur_inicio}"/> </td> 
+                            <td> <c:out value= "${lista.tur_fim}"/> </td>   
+                            <td> <c:out value= "${lista.tur_hora_inicio}"/> </td>
+                            <td> <c:out value= "${lista.tur_hora_fim}"/> </td>
+                            <td> <c:out value= "${lista.tur_dia_semana}"/> </td>
+                            <td> <c:out value= "${lista.tur_qtd_falta_dia}"/> </td>
+                              
+                         </tr>
+                            
+                            
+                            
+                      </table>
+                            
+                            
+                            
+                            
+                            
+                            </c:forEach>>
+              </div>
+                  </div>
+              
+                  
 
 
                       
@@ -156,7 +220,6 @@
                 </div>
               </div>
             </div>
-</div>
 
        
         <!-- /page content -->
